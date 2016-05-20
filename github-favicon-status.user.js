@@ -52,12 +52,16 @@
 
     window.setFavIconAfterStatus = function() {
         var indicator = document.querySelector('.branch-action');
+        indicator = indicator.querySelector('.build-statuses-list');
 
-        // TODO: Read the list of build statuses and determine a status from that.
-        if (indicator && indicator.classList.contains('branch-action-state-clean')) {
-            window.favicon.change(greenGithubIcon);
-        } else if (indicator && indicator.classList.contains('branch-action-state-unstable')) {
+        if (indicator && indicator.querySelector('.text-failure')) {
+            window.favicon.change(redGithubIcon);
+        }
+        else if (indicator && indicator.querySelector('.text-pending')) {
             window.favicon.change(yellowGithubIcon);
+        }
+        else if (indicator && indicator.querySelector('.text-success')) {
+            window.favicon.change(greenGithubIcon);
         }
     };
 
