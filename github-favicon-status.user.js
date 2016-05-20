@@ -56,11 +56,9 @@
 
         if (indicator && indicator.querySelector('.text-failure')) {
             window.favicon.change(redGithubIcon);
-        }
-        else if (indicator && indicator.querySelector('.text-pending')) {
+        } else if (indicator && indicator.querySelector('.text-pending')) {
             window.favicon.change(yellowGithubIcon);
-        }
-        else if (indicator && indicator.querySelector('.text-success')) {
+        } else if (indicator && indicator.querySelector('.text-success')) {
             window.favicon.change(greenGithubIcon);
         }
     };
